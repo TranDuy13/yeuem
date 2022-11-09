@@ -24,171 +24,188 @@
       crossorigin="anonymous"
     />
     <style>
-       canvas {
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, .2);
-        }
+      canvas {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.2);
+      }
       .content {
-    position: relative;
-    z-index: 3;
-  }
-  #no{
-    position: absolute;
-    display: inline-block;
-    left: 35%; 
-    top: 40vh;
-    -webkit-transition: all 0.1s ease-out;
-  }
-  #yes{
-    position: absolute;
-    display: inline-block;
-    left: 70%; 
-    top: 40vh;
-    -webkit-transition: all 0.3s ease-out;
-  }
-#bg{
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  opacity: .8;
-  /* height: 100vh; */
-  z-index: 0;
-  background-repeat: no-repeat;
-  background-image: url(../img/puung3.jpg);
-  background-size: cover;
-  background-position: 50%;
-  -webkit-filter: blur(4px);
-}
-.swal2-title, .swal2-content{
-  color: azure !important;
-}
-.swal2-popup {
-  border-radius: 15px !important;
-}
+        position: relative;
+        z-index: 3;
+      }
+      #no {
+        position: absolute;
+        display: inline-block;
+        left: 35%;
+        top: 40vh;
+        -webkit-transition: all 0.1s ease-out;
+      }
+      #yes {
+        position: absolute;
+        display: inline-block;
+        left: 70%;
+        top: 40vh;
+        -webkit-transition: all 0.3s ease-out;
+      }
+      #bg {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        opacity: 0.8;
+        /* height: 100vh; */
+        z-index: 0;
+        background-repeat: no-repeat;
+        background-image: url(../img/puung3.jpg);
+        background-size: cover;
+        background-position: 50%;
+        -webkit-filter: blur(4px);
+      }
+      .swal2-title,
+      .swal2-content {
+        color: azure !important;
+      }
+      .swal2-popup {
+        border-radius: 15px !important;
+      }
+      .fly {
+        width: 5rem;
+        height: 5rem;
+      border-radius: 10px;
+        transform: translate (-50% -50%);
+        position: absolute;
+      }
 
-header h2 {
-  font-family: 'Pacifico';
-  font-size: 80px;
-  text-align: center;
-	margin-bottom: 30px;
-  color: white;
-}
-header h4 {
-  font-family: 'Pacifico';
-  text-align: center;
-  color: white;
-}
+      header h2 {
+        font-family: "Pacifico";
+        font-size: 80px;
+        text-align: center;
+        margin-bottom: 30px;
+        color: white;
+      }
+      header h4 {
+        font-family: "Pacifico";
+        text-align: center;
+        color: white;
+      }
 
-@media only screen and (max-width: 500px) {
-  header h2 {
-    font-family: 'Pacifico';
-    font-size: 45px;
-    text-align: center;
-    margin-bottom: 30px;
-  }
-  header h4 {
-    font-family: 'Pacifico';
-    text-align: center;
-    padding: 15px;
-  }
-  #no{
-    position: absolute;
-    display: inline-block;
-    left: 7%; 
-    top: 40vh;
-    font-size: 14px;
-    padding: 3px;
-    -webkit-transition: all 0.1s ease-out;
-  }
-  #yes{
-    position: absolute;
-    display: inline-block;
-    left: 58%; 
-    top: 40vh;
-    font-size: 14px;
-    padding: 3px;
-    -webkit-transition: all 0.3s ease-out;
-  }
-}
+      @media only screen and (max-width: 500px) {
+        header h2 {
+          font-family: "Pacifico";
+          font-size: 45px;
+          text-align: center;
+          margin-bottom: 30px;
+        }
+        header h4 {
+          font-family: "Pacifico";
+          text-align: center;
+          padding: 15px;
+        }
+        #no {
+          position: absolute;
+          display: inline-block;
+          left: 7%;
+          top: 40vh;
+          font-size: 14px;
+          padding: 3px;
+          -webkit-transition: all 0.1s ease-out;
+        }
+        #yes {
+          position: absolute;
+          display: inline-block;
+          left: 58%;
+          top: 40vh;
+          font-size: 14px;
+          padding: 3px;
+          -webkit-transition: all 0.3s ease-out;
+        }
+      }
       /* 3. Preloader */
-#preloader {
-	position: fixed;
-	top:0;
-	left:0;
-	right:0;
-	bottom:0;
-	background-color:#ef6a8a; /* change if the mask should have another color then white */
-	z-index:9999999; /* makes sure it stays on top */
-}
+      #preloader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ef6a8a; /* change if the mask should have another color then white */
+        z-index: 9999999; /* makes sure it stays on top */
+      }
 
-.spinner {
-	position:absolute;
-	left:50%; /* centers the loading animation horizontally one the screen */
-	top:50%; /* centers the loading animation vertically one the screen */
-	width: 50px;
-	height: 30px;
-	text-align: center;
-	font-size: 10px;
-	margin-left:-25px;
-}
+      .spinner {
+        position: absolute;
+        left: 50%; /* centers the loading animation horizontally one the screen */
+        top: 50%; /* centers the loading animation vertically one the screen */
+        width: 50px;
+        height: 30px;
+        text-align: center;
+        font-size: 10px;
+        margin-left: -25px;
+      }
 
-.spinner > div {
-	background-color: #fff;
-	height: 100%;
-	width: 6px;
-	display: inline-block; 
-	-webkit-animation: stretchdelay 1.2s infinite ease-in-out;
-	animation: stretchdelay 1.2s infinite ease-in-out;
-}
+      .spinner > div {
+        background-color: #fff;
+        height: 100%;
+        width: 6px;
+        display: inline-block;
+        -webkit-animation: stretchdelay 1.2s infinite ease-in-out;
+        animation: stretchdelay 1.2s infinite ease-in-out;
+      }
 
-.spinner .rect2 {
-	-webkit-animation-delay: -1.1s;
-	animation-delay: -1.1s;
-}
+      .spinner .rect2 {
+        -webkit-animation-delay: -1.1s;
+        animation-delay: -1.1s;
+      }
 
-.spinner .rect3 {
-	-webkit-animation-delay: -1.0s;
-	animation-delay: -1.0s;
-}
+      .spinner .rect3 {
+        -webkit-animation-delay: -1s;
+        animation-delay: -1s;
+      }
 
-.spinner .rect4 {
-	-webkit-animation-delay: -0.9s;
-	animation-delay: -0.9s;
-}
+      .spinner .rect4 {
+        -webkit-animation-delay: -0.9s;
+        animation-delay: -0.9s;
+      }
 
-.spinner .rect5 {
-	-webkit-animation-delay: -0.8s;
-	animation-delay: -0.8s;
-}
+      .spinner .rect5 {
+        -webkit-animation-delay: -0.8s;
+        animation-delay: -0.8s;
+      }
 
-@-webkit-keyframes stretchdelay {
-	0%, 40%, 100% { -webkit-transform: scaleY(0.4) }  
-	20% { -webkit-transform: scaleY(1.0) }
-}
+      @-webkit-keyframes stretchdelay {
+        0%,
+        40%,
+        100% {
+          -webkit-transform: scaleY(0.4);
+        }
+        20% {
+          -webkit-transform: scaleY(1);
+        }
+      }
 
-@keyframes stretchdelay {
-	0%, 40%, 100% { 
-	transform: scaleY(0.4);
-	-webkit-transform: scaleY(0.4);
-	}  20% { 
-	transform: scaleY(1.0);
-	-webkit-transform: scaleY(1.0);
-	}
-}
-
+      @keyframes stretchdelay {
+        0%,
+        40%,
+        100% {
+          transform: scaleY(0.4);
+          -webkit-transform: scaleY(0.4);
+        }
+        20% {
+          transform: scaleY(1);
+          -webkit-transform: scaleY(1);
+        }
+      }
     </style>
   </head>
 
   <body>
     <div class="wrapper">
+      
       <!-- Preloader -->
-     <div id="preloader">
+      <div id="preloader">
         <div class="spinner">
           <div class="rect1"></div>
           <div class="rect2"></div>
@@ -196,9 +213,10 @@ header h4 {
           <div class="rect4"></div>
           <div class="rect5"></div>
         </div>
-      </div> 
+      </div>
       <canvas id="heart"></canvas>
       <div class="content">
+        <img class="fly" src="img/IMG_0660.png" alt="french bulldog">
         <header>
           <h2 id="text3">Cậu yêu tớ có phải không nào ._.</h2>
           <h4 id="text4">
@@ -206,7 +224,7 @@ header h4 {
           </h4>
         </header>
         <button id="yes" type="button" class="btn btn-danger btn-lg">
-          Yêu ơi là yêuuuuuu 
+          Yêu ơi là yêuuuuuu
         </button>
         <button id="no" type="button" class="btn btn-info btn-lg">
           Cậu mơ à :333
@@ -233,310 +251,346 @@ header h4 {
       crossorigin="anonymous"
     ></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
-    <script>const textConfig = {
-      text1: "Bé Thảo của anhh ơii!",
-      text2: "Anh Yêu bé Thảo của anh nhiều lắm lắm luôn á. Siêu nhiều cấp vũ trụ luôn",
-      text3: "Bé Thảo có yêu anhh hongggg",
-      text4: "Em bé của anhh phải trả lời đó",
-      text5: "Kệ Anh???",
-      text6: "Yêu ơi là yêu <3",
-      text7: "Làm vợ anh nhaa",
-      text8: "Đồng ý nha",
-      text9: "Dạ, Em yêu anhhh nhiều lắm. Moaaaa!",
-      text10: "Anh biết em iu anh mà, hỏi duii thoyy. Baiii",
-      text11:
-        "Tối đi làm 1 nháy nhaaaaa",
-      text12: "Okii lunn <3",
-    };
-    
-    $(document).ready(function () {
-      // process bar
-      setTimeout(function () {
-        firstQuestion();
-        $(".spinner").fadeOut();
-        $("#preloader").delay(350).fadeOut("slow");
-        $("body").delay(350).css({
-          overflow: "visible",
-        });
-      }, 600);
-    
-      $("#text3").html(textConfig.text3);
-      $("#text4").html(textConfig.text4);
-      $("#no").html(textConfig.text5);
-      $("#yes").html(textConfig.text6);
-    
-      function firstQuestion() {
-        $(".content").hide();
-        Swal.fire({
-          title: textConfig.text1,
-          text: textConfig.text2,
-          imageUrl: "https://scontent.fdad1-4.fna.fbcdn.net/v/t39.30808-6/306639806_3300509356898708_5978437271114313519_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=qoCfdaKtVp4AX9k-u0C&_nc_ht=scontent.fdad1-4.fna&oh=00_AfCf7-DFaObbKsNBdW5FKv1Fj5SX4KwYmYAs884Tz5qWyQ&oe=636FF1FA",
-          imageWidth: 300,
-          imageHeight: 300,
-          background: '#fff url("img/iput-bg.jpg")',
-          imageAlt: "Custom image",
-        }).then(function () {
-          $(".content").show(200);
-        });
+    <script>
+      let mouseCursor = document.querySelector(".fly");
+
+      window.addEventListener("mousemove", fly);
+
+      function fly(e) {
+        mouseCursor.style.top = e.pageY + "px";
+        mouseCursor.style.left = e.pageX + "px";
       }
-    
-      // switch button position
-      function switchButton() {
-        var audio = new Audio("sound/duck.mp3");
-        audio.play();
-        var leftNo = $("#no").css("left");
-        var topNO = $("#no").css("top");
-        var leftY = $("#yes").css("left");
-        var topY = $("#yes").css("top");
-        $("#no").css("left", leftY);
-        $("#no").css("top", topY);
-        $("#yes").css("left", leftNo);
-        $("#yes").css("top", topNO);
-      }
-      // move random button póition
-      function moveButton() {
-        var audio = new Audio("sound/Swish1.mp3");
-        audio.play();
-        if (screen.width <= 600) {
-          var x = Math.random() * 300;
-          var y = Math.random() * 500;
-        } else {
-          var x = Math.random() * 500;
-          var y = Math.random() * 500;
+    </script>
+    <script>
+      const textConfig = {
+        text1: "Bé Thảo của anhh ơii!",
+        text2:
+          "Anh Yêu bé Thảo của anh nhiều lắm lắm luôn á. Siêu nhiều cấp vũ trụ luôn",
+        text3: "Bé Thảo có yêu anhh hongggg",
+        text4: "Em bé của anhh phải trả lời đó",
+        text5: "Kệ Anh???",
+        text6: "Yêu ơi là yêu <3",
+        text7: "Làm vợ anh nhaa",
+        text8: "Đồng ý nha",
+        text9: "Dạ, Em yêu anhhh nhiều lắm. Moaaaa!",
+        text10: "Anh biết em iu anh mà, hỏi duii thoyy. Baiii",
+        text11: "Tối đi làm 1 nháy nhaaaaa",
+        text12: "Okii lunn <3",
+      };
+
+      $(document).ready(function () {
+        // process bar
+        setTimeout(function () {
+          firstQuestion();
+          $(".spinner").fadeOut();
+          $("#preloader").delay(350).fadeOut("slow");
+          $("body").delay(350).css({
+            overflow: "visible",
+          });
+        }, 600);
+
+        $("#text3").html(textConfig.text3);
+        $("#text4").html(textConfig.text4);
+        $("#no").html(textConfig.text5);
+        $("#yes").html(textConfig.text6);
+
+        function firstQuestion() {
+          $(".content").hide();
+          Swal.fire({
+            title: textConfig.text1,
+            text: textConfig.text2,
+            imageUrl:
+              "https://scontent.fdad1-4.fna.fbcdn.net/v/t39.30808-6/306639806_3300509356898708_5978437271114313519_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=qoCfdaKtVp4AX9k-u0C&_nc_ht=scontent.fdad1-4.fna&oh=00_AfCf7-DFaObbKsNBdW5FKv1Fj5SX4KwYmYAs884Tz5qWyQ&oe=636FF1FA",
+            imageWidth: 300,
+            imageHeight: 300,
+            background: '#fff url("img/iput-bg.jpg")',
+            imageAlt: "Custom image",
+          }).then(function () {
+            $(".content").show(200);
+          });
         }
-        var left = x + "px";
-        var top = y + "px";
-        $("#no").css("left", left);
-        $("#no").css("top", top);
-      }
-    
-      var n = 0;
-      $("#no").mousemove(function () {
-        if (n < 1) switchButton();
-        if (n > 1) moveButton();
-        n++;
-      });
-      $("#no").click(() => {
-        if (screen.width >= 900) switchButton();
-      });
-    
-      // generate text in input
-      function textGenerate() {
-        var n = "";
-        var text = " " + textConfig.text9;
-        var a = Array.from(text);
-        var textVal = $("#txtReason").val() ? $("#txtReason").val() : "";
-        var count = textVal.length;
-        if (count > 0) {
-          for (let i = 1; i <= count; i++) {
-            n = n + a[i];
-            if (i == text.length + 1) {
-              $("#txtReason").val("");
-              n = "";
-              break;
+
+        // switch button position
+        function switchButton() {
+          var audio = new Audio("sound/duck.mp3");
+          audio.play();
+          var leftNo = $("#no").css("left");
+          var topNO = $("#no").css("top");
+          var leftY = $("#yes").css("left");
+          var topY = $("#yes").css("top");
+          $("#no").css("left", leftY);
+          $("#no").css("top", topY);
+          $("#yes").css("left", leftNo);
+          $("#yes").css("top", topNO);
+        }
+        // move random button póition
+        function moveButton() {
+          var audio = new Audio("sound/Swish1.mp3");
+          audio.play();
+          if (screen.width <= 600) {
+            var x = Math.random() * 300;
+            var y = Math.random() * 500;
+          } else {
+            var x = Math.random() * 500;
+            var y = Math.random() * 500;
+          }
+          var left = x + "px";
+          var top = y + "px";
+          $("#no").css("left", left);
+          $("#no").css("top", top);
+        }
+
+        var n = 0;
+        $("#no").mousemove(function () {
+          if (n < 1) switchButton();
+          if (n > 1) moveButton();
+          n++;
+        });
+        $("#no").click(() => {
+          if (screen.width >= 900) switchButton();
+        });
+
+        // generate text in input
+        function textGenerate() {
+          var n = "";
+          var text = " " + textConfig.text9;
+          var a = Array.from(text);
+          var textVal = $("#txtReason").val() ? $("#txtReason").val() : "";
+          var count = textVal.length;
+          if (count > 0) {
+            for (let i = 1; i <= count; i++) {
+              n = n + a[i];
+              if (i == text.length + 1) {
+                $("#txtReason").val("");
+                n = "";
+                break;
+              }
             }
           }
+          $("#txtReason").val(n);
         }
-        $("#txtReason").val(n);
-      }
-    
-      // show popup
-      $("#yes").click(function () {
-        var audio = new Audio("sound/tick.mp3");
-        audio.play();
-        Swal.fire({
-          title: textConfig.text7,
-          html: true,
-          width: 900,
-          padding: "3em",
-          html: "<input type='text' class='form-control' id='txtReason'  placeholder='Whyyy'>",
-          background: '#fff url("img/iput-bg.jpg")',
-          backdrop: `
+
+        // show popup
+        $("#yes").click(function () {
+          var audio = new Audio("sound/tick.mp3");
+          audio.play();
+          Swal.fire({
+            title: textConfig.text7,
+            html: true,
+            width: 900,
+            padding: "3em",
+            html: "<input type='text' class='form-control' id='txtReason'  placeholder='Whyyy'>",
+            background: '#fff url("img/iput-bg.jpg")',
+            backdrop: `
                         rgba(0,0,123,0.4)
                         url("img/giphy2.gif")
                         left top
+                        width='20%'
                         no-repeat
                       `,
-          showCancelButton: false,
-          confirmButtonColor: "#3085d6",
-          cancelButtonColor: "#d33",
-          confirmButtonColor: "#fe8a71",
-          cancelButtonColor: "#f6cd61",
-          confirmButtonText: textConfig.text8,
-        }).then((result) => {
-          if (result.value) {
-            Swal.fire({
-              width: 900,
-              confirmButtonText: textConfig.text12,
-              background: '#fff url("img/iput-bg.jpg")',
-              title: textConfig.text10,
-              text: textConfig.text11,
-              confirmButtonColor: "#83d0c9",
-              onClose: () => {
-                window.location = "https://www.facebook.com/Drake.vippro380";
-              },
+            showCancelButton: false,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonColor: "#fe8a71",
+            cancelButtonColor: "#f6cd61",
+            confirmButtonText: textConfig.text8,
+          }).then((result) => {
+            if (result.value) {
+              Swal.fire({
+                width: 900,
+                confirmButtonText: textConfig.text12,
+                background: '#fff url("img/iput-bg.jpg")',
+                title: textConfig.text10,
+                text: textConfig.text11,
+                confirmButtonColor: "#83d0c9",
+                onClose: () => {
+                  window.location = "http://fb.com";
+                },
+              });
+            }
+          });
+
+          $("#txtReason").focus(function () {
+            var handleWriteText = setInterval(function () {
+              textGenerate();
+            }, 10);
+            $("#txtReason").blur(function () {
+              clearInterval(handleWriteText);
             });
-          }
-        });
-    
-        $("#txtReason").focus(function () {
-          var handleWriteText = setInterval(function () {
-            textGenerate();
-          }, 10);
-          $("#txtReason").blur(function () {
-            clearInterval(handleWriteText);
           });
         });
       });
-    });
     </script>
-     <script>
+    <script>
       window.requestAnimationFrame =
-          window.__requestAnimationFrame ||
-          window.requestAnimationFrame ||
-          window.webkitRequestAnimationFrame ||
-          window.mozRequestAnimationFrame ||
-          window.oRequestAnimationFrame ||
-          window.msRequestAnimationFrame ||
-          (function () {
-              return function (callback, element) {
-                  var lastTime = element.__lastTime;
-                  if (lastTime === undefined) {
-                      lastTime = 0;
-                  }
-                  var currTime = Date.now();
-                  var timeToCall = Math.max(1, 33 - (currTime - lastTime));
-                  window.setTimeout(callback, timeToCall);
-                  element.__lastTime = currTime + timeToCall;
-              };
-          })();
-      window.isDevice = (/android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(((navigator.userAgent || navigator.vendor || window.opera)).toLowerCase()));
+        window.__requestAnimationFrame ||
+        window.requestAnimationFrame ||
+        window.webkitRequestAnimationFrame ||
+        window.mozRequestAnimationFrame ||
+        window.oRequestAnimationFrame ||
+        window.msRequestAnimationFrame ||
+        (function () {
+          return function (callback, element) {
+            var lastTime = element.__lastTime;
+            if (lastTime === undefined) {
+              lastTime = 0;
+            }
+            var currTime = Date.now();
+            var timeToCall = Math.max(1, 33 - (currTime - lastTime));
+            window.setTimeout(callback, timeToCall);
+            element.__lastTime = currTime + timeToCall;
+          };
+        })();
+      window.isDevice =
+        /android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(
+          (
+            navigator.userAgent ||
+            navigator.vendor ||
+            window.opera
+          ).toLowerCase()
+        );
       var loaded = false;
       var init = function () {
-          if (loaded) return;
-          loaded = true;
-          var mobile = window.isDevice;
-          var koef = mobile ? 0.5 : 1;
-          var canvas = document.getElementById('heart');
-          var ctx = canvas.getContext('2d');
-          var width = canvas.width = koef * innerWidth;
-          var height = canvas.height = koef * innerHeight;
-          var rand = Math.random;
+        if (loaded) return;
+        loaded = true;
+        var mobile = window.isDevice;
+        var koef = mobile ? 0.5 : 1;
+        var canvas = document.getElementById("heart");
+        var ctx = canvas.getContext("2d");
+        var width = (canvas.width = koef * innerWidth);
+        var height = (canvas.height = koef * innerHeight);
+        var rand = Math.random;
+        ctx.fillStyle = "rgba(0,0,0,1)";
+        ctx.fillRect(0, 0, width, height);
+
+        var heartPosition = function (rad) {
+          //return [Math.sin(rad), Math.cos(rad)];
+          return [
+            Math.pow(Math.sin(rad), 3),
+            -(
+              15 * Math.cos(rad) -
+              5 * Math.cos(2 * rad) -
+              2 * Math.cos(3 * rad) -
+              Math.cos(4 * rad)
+            ),
+          ];
+        };
+        var scaleAndTranslate = function (pos, sx, sy, dx, dy) {
+          return [dx + pos[0] * sx, dy + pos[1] * sy];
+        };
+
+        window.addEventListener("resize", function () {
+          width = canvas.width = koef * innerWidth;
+          height = canvas.height = koef * innerHeight;
           ctx.fillStyle = "rgba(0,0,0,1)";
           ctx.fillRect(0, 0, width, height);
+        });
 
-          var heartPosition = function (rad) {
-              //return [Math.sin(rad), Math.cos(rad)];
-              return [Math.pow(Math.sin(rad), 3), -(15 * Math.cos(rad) - 5 * Math.cos(2 * rad) - 2 * Math.cos(3 * rad) - Math.cos(4 * rad))];
-          };
-          var scaleAndTranslate = function (pos, sx, sy, dx, dy) {
-              return [dx + pos[0] * sx, dy + pos[1] * sy];
-          };
+        var traceCount = mobile ? 20 : 50;
+        var pointsOrigin = [];
+        var i;
+        var dr = mobile ? 0.3 : 0.1;
+        for (i = 0; i < Math.PI * 2; i += dr)
+          pointsOrigin.push(scaleAndTranslate(heartPosition(i), 210, 13, 0, 0));
+        for (i = 0; i < Math.PI * 2; i += dr)
+          pointsOrigin.push(scaleAndTranslate(heartPosition(i), 150, 9, 0, 0));
+        for (i = 0; i < Math.PI * 2; i += dr)
+          pointsOrigin.push(scaleAndTranslate(heartPosition(i), 90, 5, 0, 0));
+        var heartPointsCount = pointsOrigin.length;
 
-          window.addEventListener('resize', function () {
-              width = canvas.width = koef * innerWidth;
-              height = canvas.height = koef * innerHeight;
-              ctx.fillStyle = "rgba(0,0,0,1)";
-              ctx.fillRect(0, 0, width, height);
-          });
-
-          var traceCount = mobile ? 20 : 50;
-          var pointsOrigin = [];
-          var i;
-          var dr = mobile ? 0.3 : 0.1;
-          for (i = 0; i < Math.PI * 2; i += dr) pointsOrigin.push(scaleAndTranslate(heartPosition(i), 210, 13, 0, 0));
-          for (i = 0; i < Math.PI * 2; i += dr) pointsOrigin.push(scaleAndTranslate(heartPosition(i), 150, 9, 0, 0));
-          for (i = 0; i < Math.PI * 2; i += dr) pointsOrigin.push(scaleAndTranslate(heartPosition(i), 90, 5, 0, 0));
-          var heartPointsCount = pointsOrigin.length;
-
-          var targetPoints = [];
-          var pulse = function (kx, ky) {
-              for (i = 0; i < pointsOrigin.length; i++) {
-                  targetPoints[i] = [];
-                  targetPoints[i][0] = kx * pointsOrigin[i][0] + width / 2;
-                  targetPoints[i][1] = ky * pointsOrigin[i][1] + height / 2;
-              }
-          };
-
-          var e = [];
-          for (i = 0; i < heartPointsCount; i++) {
-              var x = rand() * width;
-              var y = rand() * height;
-              e[i] = {
-                  vx: 0,
-                  vy: 0,
-                  R: 2,
-                  speed: rand() + 5,
-                  q: ~~(rand() * heartPointsCount),
-                  D: 2 * (i % 2) - 1,
-                  force: 0.2 * rand() + 0.7,
-                  f: "hsla(0," + ~~(40 * rand() + 60) + "%," + ~~(60 * rand() + 20) + "%,.3)",
-                  trace: []
-              };
-              for (var k = 0; k < traceCount; k++) e[i].trace[k] = { x: x, y: y };
+        var targetPoints = [];
+        var pulse = function (kx, ky) {
+          for (i = 0; i < pointsOrigin.length; i++) {
+            targetPoints[i] = [];
+            targetPoints[i][0] = kx * pointsOrigin[i][0] + width / 2;
+            targetPoints[i][1] = ky * pointsOrigin[i][1] + height / 2;
           }
+        };
 
-          var config = {
-              traceK: 0.4,
-              timeDelta: 0.01
+        var e = [];
+        for (i = 0; i < heartPointsCount; i++) {
+          var x = rand() * width;
+          var y = rand() * height;
+          e[i] = {
+            vx: 0,
+            vy: 0,
+            R: 2,
+            speed: rand() + 5,
+            q: ~~(rand() * heartPointsCount),
+            D: 2 * (i % 2) - 1,
+            force: 0.2 * rand() + 0.7,
+            f:
+              "hsla(0," +
+              ~~(40 * rand() + 60) +
+              "%," +
+              ~~(60 * rand() + 20) +
+              "%,.3)",
+            trace: [],
           };
+          for (var k = 0; k < traceCount; k++) e[i].trace[k] = { x: x, y: y };
+        }
 
-          var time = 0;
-          var loop = function () {
-              var n = -Math.cos(time);
-              pulse((1 + n) * .5, (1 + n) * .5);
-              time += ((Math.sin(time)) < 0 ? 9 : (n > 0.8) ? .2 : 1) * config.timeDelta;
-              ctx.fillStyle = "rgba(0,0,0,.1)";
-              ctx.fillRect(0, 0, width, height);
-              for (i = e.length; i--;) {
-                  var u = e[i];
-                  var q = targetPoints[u.q];
-                  var dx = u.trace[0].x - q[0];
-                  var dy = u.trace[0].y - q[1];
-                  var length = Math.sqrt(dx * dx + dy * dy);
-                  if (10 > length) {
-                      if (0.95 < rand()) {
-                          u.q = ~~(rand() * heartPointsCount);
-                      }
-                      else {
-                          if (0.99 < rand()) {
-                              u.D *= -1;
-                          }
-                          u.q += u.D;
-                          u.q %= heartPointsCount;
-                          if (0 > u.q) {
-                              u.q += heartPointsCount;
-                          }
-                      }
-                  }
-                  u.vx += -dx / length * u.speed;
-                  u.vy += -dy / length * u.speed;
-                  u.trace[0].x += u.vx;
-                  u.trace[0].y += u.vy;
-                  u.vx *= u.force;
-                  u.vy *= u.force;
-                  for (k = 0; k < u.trace.length - 1;) {
-                      var T = u.trace[k];
-                      var N = u.trace[++k];
-                      N.x -= config.traceK * (N.x - T.x);
-                      N.y -= config.traceK * (N.y - T.y);
-                  }
-                  ctx.fillStyle = u.f;
-                  for (k = 0; k < u.trace.length; k++) {
-                      ctx.fillRect(u.trace[k].x, u.trace[k].y, 1, 1);
-                  }
+        var config = {
+          traceK: 0.4,
+          timeDelta: 0.01,
+        };
+
+        var time = 0;
+        var loop = function () {
+          var n = -Math.cos(time);
+          pulse((1 + n) * 0.5, (1 + n) * 0.5);
+          time +=
+            (Math.sin(time) < 0 ? 9 : n > 0.8 ? 0.2 : 1) * config.timeDelta;
+          ctx.fillStyle = "rgba(0,0,0,.1)";
+          ctx.fillRect(0, 0, width, height);
+          for (i = e.length; i--; ) {
+            var u = e[i];
+            var q = targetPoints[u.q];
+            var dx = u.trace[0].x - q[0];
+            var dy = u.trace[0].y - q[1];
+            var length = Math.sqrt(dx * dx + dy * dy);
+            if (10 > length) {
+              if (0.95 < rand()) {
+                u.q = ~~(rand() * heartPointsCount);
+              } else {
+                if (0.99 < rand()) {
+                  u.D *= -1;
+                }
+                u.q += u.D;
+                u.q %= heartPointsCount;
+                if (0 > u.q) {
+                  u.q += heartPointsCount;
+                }
               }
-              //ctx.fillStyle = "rgba(255,255,255,1)";
-              //for (i = u.trace.length; i--;) ctx.fillRect(targetPoints[i][0], targetPoints[i][1], 2, 2);
+            }
+            u.vx += (-dx / length) * u.speed;
+            u.vy += (-dy / length) * u.speed;
+            u.trace[0].x += u.vx;
+            u.trace[0].y += u.vy;
+            u.vx *= u.force;
+            u.vy *= u.force;
+            for (k = 0; k < u.trace.length - 1; ) {
+              var T = u.trace[k];
+              var N = u.trace[++k];
+              N.x -= config.traceK * (N.x - T.x);
+              N.y -= config.traceK * (N.y - T.y);
+            }
+            ctx.fillStyle = u.f;
+            for (k = 0; k < u.trace.length; k++) {
+              ctx.fillRect(u.trace[k].x, u.trace[k].y, 1, 1);
+            }
+          }
+          //ctx.fillStyle = "rgba(255,255,255,1)";
+          //for (i = u.trace.length; i--;) ctx.fillRect(targetPoints[i][0], targetPoints[i][1], 2, 2);
 
-              window.requestAnimationFrame(loop, canvas);
-          };
-          loop();
+          window.requestAnimationFrame(loop, canvas);
+        };
+        loop();
       };
 
       var s = document.readyState;
-      if (s === 'complete' || s === 'loaded' || s === 'interactive') init();
-      else document.addEventListener('DOMContentLoaded', init, false);
-  </script>
+      if (s === "complete" || s === "loaded" || s === "interactive") init();
+      else document.addEventListener("DOMContentLoaded", init, false);
+    </script>
   </body>
 </html>
